@@ -1,1 +1,1 @@
-# boxoffice
+### 중간 프로젝트, 영화 예매&리뷰 사이트 boxOffice
