@@ -1,0 +1,536 @@
+html, body {
+	margin:0;
+	padding:0;
+	width:100%;
+	height: 100%;
+	font-family: 'Arita-dotum-Medium';
+}
+
+#headbar{
+	width :1300px;
+	position: absolute;
+	left:50%;
+	margin-left: -650px;
+}
+#maincontent
+{
+	width :1300px;
+	position: absolute;
+	left:50%;
+	margin-left: -650px;
+}
+#footcontent{
+	width :1300px;
+	position: absolute;
+	left:50%;
+	margin-left: -650px;
+}
+header{ 
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #FFFFFF;
+	height: 55px;
+	z-index: 500;
+	width: 100%;
+}
+
+section{
+	position: absolute;
+	left: 0;
+	background: #FFFFFF;
+	top: 55px;
+	color: black;
+    width: 100%;
+	height: 830px;
+	z-index: 1;
+	margin-top : 10%;
+}
+footer{
+	position: absolute;
+	background: black;
+	height: 130px;
+    width: 100%;
+    left:0;
+    top:810px;
+	z-index: 300;
+}
+#title1{
+	color: black;
+	font-size: 300%;
+	font-weight: bold;
+	position: absolute;
+	top: 20px;
+	left: 170px;
+}
+#title2{
+	color: black;
+	font-size: 160%;
+	font-weight: bold;
+	position: absolute;
+	top: 150px;
+	left: 300px;
+}
+#mainvideo
+{
+	position: absolute;
+	top: 70px;
+	left: 230px;
+	width:560px ;
+	height:315px;
+}
+#searchResult
+{
+	color: white;
+	position: absolute;
+	top: 70px;
+	left: 200px;
+}
+#aboutTandR
+{
+	color: white;
+	position: absolute;
+	top: 70px;
+	left: 200px;
+
+}
+
+a[id="category1"] {
+  	color: white;
+	font-size: 150%;
+	font-weight: bold;
+  	position: absolute;
+  	top: 100px;
+	left: 150px;
+}
+a[id="category2"] {
+  	color: white;
+	font-size: 150%;
+	font-weight: bold;
+  	position: absolute;
+  	top: 100px;
+	left: 300px;
+}
+a[id="category3"] {
+	color: white;
+	font-size: 150%;
+	font-weight: bold;
+	position: absolute;
+  	top: 100px;
+	left: 450px;
+}
+#container {
+	color: white;
+	position: absolute;
+	left: 300px;
+	top : 300px;
+}
+#signInBox
+{
+	color: black;
+	position: absolute;
+	top: 250px;
+	left: 430px;
+	height: 415px;
+	width: 400px;
+	background-color: #EAEAEA;
+}
+#id{
+	position: absolute;
+	top: 175px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#idText{
+	position: absolute;
+	top: 190px;
+	height: 40px;
+	width: 200px;
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#password1{
+	position: absolute;
+	top: 220px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#passwordText{
+	position: absolute;
+	top: 235px;
+	height: 40px;
+	width: 200px;
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#password2{
+	position: absolute;
+	top: 265px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#passwordText2{
+	position: absolute;
+	top: 280px;
+	height: 40px;
+	width: 200px;
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#name{
+	position: absolute;
+	top: 310px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#nameText{
+	position: absolute;
+	top: 325px;
+	height: 40px;
+
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#addressnow{
+	position: absolute;
+	top: 355px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+	
+}
+
+#postcode{
+	position: absolute;
+	top: 445px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 60%;
+}
+#findbutton{
+	position: absolute;
+	top: 447px;
+	height: 40px;
+	width: 100px;
+	left: 214px;
+	background-color: #EAEAEA;
+
+   border-bottom: none;
+   font-size: 100%;
+}
+#roadAddress{
+	position: absolute;
+	top: 400px;
+	height: 40px;
+	width: 120px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 60%;
+}
+#detailAddress{
+	position: absolute;
+	top: 400px;
+	height: 40px;
+	width: 120px;
+	left: 232px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 60%;
+}
+#addressText{
+	position: absolute;
+	top: 370px;
+	height: 40px;
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#mailaddress{
+	position: absolute;
+	top: 490px;
+	height: 40px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#mailaddress2{
+	position: absolute;
+	top: 450px;
+	height: 35px;
+	width: 100px;
+	left: 210px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+   font-size: 90%;
+}
+#mailaddressText{
+	position: absolute;
+	top: 505px;
+	height: 40px;
+	width: 200px;
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#telText{
+	position: absolute;
+	top: 550px;
+	
+	left: 40px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+   font-size: 100%;
+}
+#hip1{
+	position: absolute;
+	top: 505px;
+	left: 167px;
+   font-size: 100%;
+   font-weight: bold;
+}
+#hip2{
+	position: absolute;
+	top: 505px;
+	left: 243px;
+   font-size: 100%;
+   font-weight: bold;
+}
+#tel1{
+	position: absolute;
+	top: 494px;
+	height: 40px;
+	width: 50px;
+	left: 110px;
+	background-color: #EAEAEA;
+
+   font-size: 90%;
+}
+#tel2{
+	position: absolute;
+	top: 539px;
+	height: 35px;
+	width: 200px;
+	left: 110px;
+	background-color: #EAEAEA;
+	 border-left: none;
+   border-right: none;
+   border-top: none;
+}
+#tel3{
+	position: absolute;
+	top: 494px;
+	height: 35px;
+	width: 50px;
+	left: 255px;
+	background-color: #EAEAEA;
+
+   font-size: 90%;
+}
+#err{
+	position: absolute;
+	top: 175px;
+	left: 110px;
+	color: red; 
+	font-size: 6px; 
+	font-weight: bold; }
+
+#idchker{
+	position: absolute;
+	top: 175px;
+	left: 233px;
+	height: 42px;
+	width: 80px;
+font-size: 100%; 
+   border-bottom: none;
+}
+#signupbutton{
+	position: absolute;
+	top: 605px;
+	left: 110px;
+	height: 60px;
+	width: 180px;
+	background-color: orange;
+		 border-left: none;
+   border-right: none;
+   border-top: none;
+   border-bottom: none;
+   font-size: 190%;
+}
+#loginpage{
+	position: absolute;
+	top: 625px;
+	left: 150px;
+   font-size: 90%;
+}
+#logoi{
+	position: absolute;
+	left: 140px;
+	top: 30px;
+}
+#title4{
+	top:200px;
+	left:250px;
+	position: absolute;
+	font-size: 130%;
+	font-weight: bold;
+	color: yellow;
+}
+#title5{
+	top:500px;
+	left:300px;
+	position: absolute;
+	font-size: 130%;
+	font-weight: bold;
+	color: black;
+	
+}
+#maincontent4{
+	width: 650px;
+	top:240px;
+	left:300px;
+	position: absolute;
+}
+#maincontent5{
+	width: 650px;
+	top:540px;
+	left:300px;
+	position: absolute;
+}
+.boardtable{
+	margin-top:5%;
+	width: 650px;
+	text-align: center;
+}
+#write_btn1{
+	top:160px;
+	left:50px;
+	position: absolute;
+}
+#write_btn2{
+	top:160px;
+	left:50px;
+	position: absolute;
+}
+#pagebar1{
+	top:160px;
+	left:250px;
+	position: absolute;	
+}
+#pagebar2{
+	top:160px;
+	left:250px;
+	position: absolute;	
+}
+#ticketView{
+	border: 1px solid gray;
+	width: 700px;
+	height: 200px;
+	position: absolute;
+	top:300px;
+	left: 300px;
+	text-align: center;
+}
+#ticketcontent{
+	height: 150px;
+}
+a[class="button"] {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display: block;
+	text-decoration: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+}
+a.button {
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: rgba(255, 54, 0, 0.85) 0 0px 0px 2px inset;
+}
+
+a.button:hover {
+	color: rgba(0, 0, 0, 1);
+	box-shadow: rgba(255, 54, 0, 0.85) 0 0px 0px 40px inset;
+}
+#payinfo{
+	position:absolute;
+	top:600px;
+	left: 300px;
+}
+#payInfoTable{
+	border: 1px solid gray;
+	width: 700px;
+	text-align: center;
+}
+	

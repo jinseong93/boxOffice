@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reviewns">
+	<select id="select" parameterType="integer" resultType="review">
+		select * from review where rvNum = #{rvNum}
+	</select>
+	<select id="getTotal" resultType="integer" >
+		select count(*) from review 
+	</select>
+	<select id="getNowClosedTotal" resultType="integer">
+		select count(*) from review where mvCode = #{mvCode}
+	</select>
+	<select id="reviewList" parameterType="map" resultType="review">
+		select * from (select rowNum rn, a.* from(select * from review order by rvNum desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="reviewNowClosedList" parameterType="map" resultType="review">
+		select * from (select rowNum rn, a.* from(select * from review where mvCode = #{mvCode} order by rvNum desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="selectId" resultType="string" parameterType="integer">
+		select id from review where rvNum = #{rvNum}
+	</select>
+	<insert id="insert" parameterType="review">
+		<selectKey keyProperty="rvNum" order="BEFORE" resultType="integer">
+			select nvl(max(rvNum), 0) + 1 rvNum from review
+		</selectKey>
+		insert into review values(#{rvNum}, #{rvTitle}, #{rvContent}, #{id}, #{mvGrade}, 0, sysdate, 'n', #{mvTitle}, #{mvCode}, 0, 0)
+	</insert>
+	<update id="readCountUpdate" parameterType="integer">
+		update review set rvReadCount = rvReadCount +1 where rvNum = #{rvNum}
+	</update>
+	<update id="delete" parameterType="integer">
+		update review set rvDel='y' where rvNum=#{rvNum}
+	</update>
+	<update id="deleteMaster" parameterType="integer">
+		update review set rvDel='m' where rvNum=#{rvNum}
+	</update>
+	<update id="update">
+		update review set rvTitle= #{rvTitle }, mvGrade = #{mvGrade }, rvContent = #{rvContent} where rvNum = #{rvNum }
+	</update>
+	<update id="updateLike" parameterType="integer">
+		update review set rvLike = rvLike + 1 where rvNum = #{rvNum }
+	</update>
+	<update id="mvCodeUpdate">
+		update review set mvCode = #{mvCode} where rvNum = #{rvNum }
+	</update>
+	<update id="addCount" parameterType="integer">
+		update review set rpCount = rpCount+1 where rvNum = #{rvNum}
+	</update>
+	<update id="subCount" parameterType="integer">
+		update review set rpCount = rpCount-1 where rvNum = #{rvNum}
+	</update>
+	<select id="mylist" resultType="review">
+		select * from (select rowNum rn, a.* from(select * from review where id=#{id} order by rvNum desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="getCodeTotal" resultType="integer">
+		select count(*) from review where mvCode=#{mvCode} and rvDel='n'
+	</select>
+	<select id="gradeSUM" resultType="integer" >
+		select sum(mvGrade) from review where mvCode = #{mvCode} 
+	</select>
+</mapper>
+

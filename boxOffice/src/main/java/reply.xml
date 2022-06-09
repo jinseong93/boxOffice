@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replyns">
+	<!-- 게시글별 댓글 카운트 -->
+	<select id="rpList" parameterType="integer" resultType="reply"> 
+		select * from (select rowNum rn, e.* from (select * from reply where rvNum = #{rvNum} 
+		and rpDel='n' order by rpDate, ref desc, ref_step) e) order by rn
+	</select>
+	<!-- 삭제된 댓글도 포함 -->
+	<select id="rpList2" parameterType="integer" resultType="reply"> 
+		select * from (select * from reply where rvNum = #{rvNum }
+		order by rpDate,ref desc, ref_step desc) order by ref, ref_step
+	</select>
+	
+	<insert id="insert" parameterType="reply">
+		<selectKey keyProperty="rpNum" order="BEFORE" resultType="integer">
+			select nvl(max(rpNum), 0) + 1 rpNum from reply
+		</selectKey>
+		insert into reply values(#{rpNum}, #{rvNum }, #{rpContent}, #{id }, sysdate, 'n', #{rpNum }, #{ref_level}, #{ref_step})
+	</insert>
+	<select id="selectStep" parameterType="integer" resultType="integer">
+		select nvl(max(ref_step), 0) + 1 ref_step from reply where ref = #{ref }
+	</select>
+	<insert id="insertRe" parameterType="reply">
+		<selectKey keyProperty="rpNum" order="BEFORE" resultType="integer">
+			select nvl(max(rpNum), 0) + 1 rpNum from reply
+		</selectKey>
+		insert into reply values(#{rpNum}, #{rvNum }, #{rpContent}, #{id }, sysdate, 'n', #{ref }, #{ref_level}, #{ref_step})
+	</insert>
+	<update id="update">
+		update reply set rpContent = #{rpContent} where rpNum = #{rpNum}
+	</update>
+	<update id="deleteMaster">
+		update reply set rpDel = 'm' where rpNum = #{rpNum}
+	</update>
+	<delete id="delete">
+		delete from reply where rpNum = #{rpNum}
+	</delete>
+</mapper>

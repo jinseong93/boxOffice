@@ -1,0 +1,20 @@
+/* NavBar */
+#reviewNavBar { margin-left:auto; margin-right:auto; margin-bottom: 30px; width: 70%; }
+#navbarDropdown {font-weight: bold;/* color: #F95700; */}
+/* .dropdown-item {color: #F95700;} */
+.navbar-brand {font-size: 1.5em; color: #F95700;}/* 로고 + Review  */
+
+/* 메인테이블 감싸고 있는 div태그 */
+#mainContainer {width: 70%; margin-left:auto; margin-right:auto;}
+/* 메인테이블 */
+#mainTable {width: 100%; text-align: center;}
+/*테이블안 a태그  */
+#rvTitle {text-decoration-line : none; color: black;}
+/* 테이블헤드 */
+#mainTable>thead { background-color: orange; color: white;}
+
+#mvTitle {color :#F95700; font-weight: bold;}
+
+#rpCount {color :red;}
+
+body {font-family:  'Arita-dotum-Medium';}

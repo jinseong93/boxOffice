@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- src/main/java폴더에 있는 db.properties의 정보를 여기로 가지고 와 -->
+	<properties resource="db.properties"></properties>
+	
+	<typeAliases>
+		<!-- boxOffice.model에 있는 Event의 별칭을 event로 부르기 -->
+		<typeAlias alias="event" type="boxOffice.model.Event" />
+		<typeAlias alias="review" type="boxOffice.model.Review" />
+		<typeAlias alias="member" type="boxOffice.model.Member"/>
+		<typeAlias alias="reservation" type="boxOffice.model.Reservation"/>
+		<typeAlias alias="nowshowing" type="boxOffice.model.NowShowing"/>
+		<typeAlias alias="theater" type="boxOffice.model.Theater"/>
+		<typeAlias alias="screen" type="boxOffice.model.Screen"/>
+		<typeAlias alias="likes" type="boxOffice.model.Likes"/>
+		<typeAlias alias="movie" type="boxOffice.model.Movie"/>
+		<typeAlias alias="store" type="boxOffice.model.Store"/>
+		<typeAlias alias="reply" type="boxOffice.model.Reply"/>
+	</typeAliases>
+	<!-- DataBase 연결에 대한 정보 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 연결된 DB의 table에 CRUD작업하는 sql이 들어있는 xml파일 -->
+	<mappers>
+		<mapper resource="event.xml" />
+		<mapper resource="review.xml" />
+		<mapper resource="member.xml"/>
+		<mapper resource="reservation.xml"/>
+		<mapper resource="theater.xml" />
+		<mapper resource="nowshowing.xml" />
+		<mapper resource="screen.xml"/>
+		<mapper resource="likes.xml"/>
+		<mapper resource="movie.xml"/>
+		<mapper resource="store.xml"/>
+		<mapper resource="reply.xml" />
+	</mappers>
+	 
+</configuration>

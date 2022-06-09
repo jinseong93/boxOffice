@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+.mymenu {
+	display: flex;
+	padding-top: 70px;
+}
+.mym {
+    border: solid 0px;
+    width: 150px;
+    margin-left: 20%;
+}
+.mym ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+.mym li {
+	font-size: 22px;
+	padding-bottom: 50px;
+	padding-top: 20px;
+}
+.mym a {
+	text-decoration: none;
+	color: #F95700
+}
+
+.mym a:visited {
+	color: #F95700
+}
+#info {
+	display: flex;
+    border: solid orange 2px;
+    padding: 10px;
+    width: 700px;
+    height: 600px;
+    margin-left: 10%;
+} 
+.myinfo {
+	display: flex;
+	margin-bottom: 80px;
+	margin-top: 20px
+}
+.myinfo div {
+    text-align: center;
+    width: 110px;
+    height: 45px;
+    line-height: 45px;
+    border: solid 1px;
+    border-radius: 30px;
+    margin: 7px;
+    font-size: 20px;
+}
+.myinfo input {
+	border: solid 0px;
+    width: 130px;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.my1 {
+	border: 0px;
+	padding: 60px 77px 0 70px;
+}
+
+.my2 {
+	border: 0px;
+	padding-top: 60px;
+}
+
+.mb {
+    text-align: center;
+    height: 67px;
+    width: 700px;
+    position: absolute;
+    font-size: 28px;
+    margin-left: -12px;
+    border: solid 0px;
+    margin-top: -11px;
+    line-height: 60px;
+    background-color: orange;
+    color: #ffffff;
+}
+
+.addr {
+    display: flex;
+    position: absolute;
+    padding: 494px 0 0 70px;
+}
+
+.addr div {
+	border: solid 1px;
+    width: 110px;
+    height: 45px;
+    margin: 7px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.addr input {
+	height: 35px;
+    margin: 7px;
+    border: solid 0px;
+    width: 358px;
+    text-align: center;
+    font-size: 17px
+}

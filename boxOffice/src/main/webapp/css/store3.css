@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+ font-family: 'Arita-dotum-Medium';
+  margin: 0;
+  min-width: 992px;
+}
+
+#maincontent{
+	margin-top:5%;
+}
+
+#title1{
+	color: black;
+	font-size: 200%;
+	position: absolute;
+	top: 7%;
+	left: 170px;
+	width :1300px;
+	position: absolute;
+	left:50%;
+	margin-left: -650px;
+	margin-top : 5%;
+}
+
+
+.main {
+	width:230px;
+	height : 50px;
+	text-align:center;
+    background-color:#FFFFFF;
+	border:0; 
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    color : black; 
+	margin-bottom : 5%;
+	margin-left:350px;
+	
+}
+
+#main1{
+	position: absolute;
+	margin-top :15%;
+	margin-left:5%;
+	height:400px;
+}
+section button:hover{
+	box-shadow:0 0 0 0 rgba(0,0,0,0.25) inset;
+	background-color: orange;
+}
+
+
+#payInfoTable{
+	margin-left : 40%;
+}
+

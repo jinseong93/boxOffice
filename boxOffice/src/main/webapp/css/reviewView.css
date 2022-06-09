@@ -1,0 +1,44 @@
+#mainContainer {width: 60%; margin-left:auto; margin-right:auto;}
+
+#mainTable {width: 100%; text-align: center;}
+
+h1 {color: black;}
+
+#rvTitle {font-size: 18px; color: #F95700; font-weight: bold;}
+
+#rvContent {font-size: 17px;}
+
+#tbody th { background-color: orange; color: white; vertical-align:middle;}
+
+body {font-family:  'Arita-dotum-Medium';}
+
+/* 댓글 전체감싸는 태그*/
+#replyContainer {width: 60%; margin-left:auto; margin-right:auto;}
+
+#rpView{width: 100%; word-break:break-all;}
+/* 리플 헤더*/
+#rpViewHeader {background: orange; color: #ffffff;}
+/* 댓글 수정,삭제,답글쓰기 버튼 */
+#updelbtn, #nestedReplyBtn {font-size: 0.8em; color: gray; cursor: pointer;}
+/* 댓글 내용 */
+#rpContent {font-size: 0.9em;}
+/* 댓글 입력 날짜 */
+#rpDate {font-size: 0.8em; color: gray;}
+/* 댓글 textarea */
+#rpTA {width: 100%;}
+/* 댓글 수정 textarea */
+#rpUpTA {width: 100%;}
+/* 댓글 수정 누른 후 나오는 수정,취소 버튼 */
+#subCloBtn {float: right;}
+/* 댓글등록버튼 */
+#rpBtn {float: right;}
+
+/* .re {
+	float: left;
+    display: inline-block;
+    border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+    width: 11px;
+    height: 11px;
+    margin: 17px;
+} */

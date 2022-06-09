@@ -1,0 +1,14 @@
+/* 이벤트 게시글 없을시 */
+.noEvent {width: 70%; margin-left:auto; margin-right:auto; margin-top: 150px;}
+/* 메인 감싸고 있는 div태그 */
+.mainContainer {width: 70%; margin-left:auto; margin-right:auto;}
+/* card-body태그  */
+.card-body {text-align: center;}
+.card-text {font-size: 20px; text-decoration : none; color: black;}
+.evPeriod {font-size: 10px; text-decoration : none; color: black;}
+/* card-body태그 밑에 a태그들 hover  */
+.card-text:hover, .evPeriod:hover {color: #F95700; font-weight: bold;}
+/* 각 각 카드마다 */
+#col {margin-bottom: 35px;}
+
+body {font-family:  'Arita-dotum-Medium';}

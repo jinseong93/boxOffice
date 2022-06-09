@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="screenns">
+	<select id="select" parameterType="string" resultType="screen">
+		select * from screen where screenCode=#{screenCode}
+	</select>
+	
+	<select id="selectScreenNum" parameterType="int" resultType="screen">
+		select DISTINCT SCREENNUM from (select rowNum rn, a.* from(select DISTINCT screenNum, screenTime from SCREEN INNER JOIN NOWSHOWING ON SCREEN.SCREENCODE=NOWSHOWING.SCREENCODE where NOWSHOWING.mvCode=#{mvCode} and NOWSHOWING.ttCode=#{ttCode} order by screenNum)a)
+	</select >
+	
+	<select id="selectScreenCode" parameterType="int" resultType="screen">
+		select screenCode from (select * from (select rowNum rn, a.* from(select screenCode, screenNum, screenTime from SCREEN where screenCode IN (select screenCode from NOWSHOWING where mvCode=#{mvCode} and #{ttCode}) order by screenCode)a)where screenTime=#{screenTime}) 
+	</select>
+	<select id="selectScreenList" resultType="screen">
+		select * from (select rowNum rn, a.* from(select s.screenCode, s.screenNum, s.screenTime, n.pchk from SCREEN s, (select * from NOWSHOWING where pchk='n') n where n.screenCode=s.screenCode and n.mvCode=#{mvCode} and n.ttCode=#{ttCode} and n.showingDay=#{showingDay } group by s.screenCode, s.screenNum, s.screenTime, n.pchk order by screenTime)a)  
+	</select>
+	<select id="getScreenlist" resultType="screen">
+		select screenCode,screenNum,screenTime from SCREEN
+	</select>	
+	
+	<select id="selectScreenCode3" resultType="screen">
+		select * from SCREEN where screenTime=#{screenTime}
+	</select>	
+	
+	
+
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberbo">
+	<select id="select" parameterType="string" resultType="member">
+		select * from member where id=#{id}
+	</select>
+	<select id="insert" parameterType="member">
+		insert into member values(#{id}, #{password}, #{name}, 0, 0, #{tel}, #{address}, sysdate, 100, 'n')
+	</select>
+	
+	<select id="selectScore" parameterType="string" resultType="int">
+		select score from member where id=#{id}
+	</select>
+	<select id="reduceScore" parameterType="member">
+		update member set score = score-20 where id=#{id}
+	</select>
+	<update id="plusScore" parameterType="member">
+		update member set score = score +2 where id=#{id }
+	</update>
+	<update id="textcountAdd" parameterType="string">
+		update member set textcount = textcount +1 where id=#{id}
+	</update>
+	<update id="ticketcountAdd" parameterType="string">
+		update member set ticketcount = ticketcount +1 where id=#{id}
+	</update>
+	<update id="memberDel" parameterType="string">
+		update member set memberdel='y' where id=#{id}
+	</update>
+	<select id="memberlist" parameterType="map" resultType="member">
+		select * from (select rowNum rn, a.* from(select * from member where id!='master' order by reg_date desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="getTotal" resultType="integer" parameterType="string">
+		select count(*) from member 
+	</select>
+	<update id="scoreUpTT" parameterType="string">
+		update member set score = score + 10 where id=#{id}
+	</update>
+	<update id="scoreUpRe" parameterType="string">
+		update member set score = score + 5 where id=#{id}
+	</update>
+</mapper> 

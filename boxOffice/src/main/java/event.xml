@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="eventns">
+	<select id="select" resultType="event">
+		select * from event where evNum = #{evNum}
+	</select>
+	<select id="getTotal" parameterType="string" resultType="integer" >
+		select count(*) from event
+	</select>
+	<select id="list" parameterType="map" resultType="event">
+		select * from (select rowNum rn, a.* from(select * from event order by evNum desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<insert id="insert" parameterType="event">
+		<selectKey keyProperty="evNum" order="BEFORE" resultType="integer">
+			select nvl(max(evNum), 0) + 1 evNum from event
+		</selectKey>
+			insert into event values(#{evNum}, #{evTitle}, #{evContent}, #{id}, #{evTitlePhoto}, #{evContentPhoto}, sysdate, #{evStart}, #{evEnd}, 'n', 0)
+	</insert>
+	<update id="readCountUpdate" parameterType="integer">
+		update event set evReadCount = evReadCount +1 where evNum = #{evNum}
+	</update>
+	<update id="delete" parameterType="integer">
+		update event set evDel='y' where evNum=#{evNum}
+	</update>
+	<update id="update">
+		update event set evTitle = #{evTitle}, evStart = #{evStart}, evEnd = #{evEnd}, evTitlePhoto = #{evTitlePhoto}
+		, evContentPhoto = #{evContentPhoto}, evContent = #{evContent} where evNum = #{evNum}
+	</update>
+</mapper>

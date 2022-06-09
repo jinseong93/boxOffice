@@ -1,0 +1,10 @@
+/* 2개 테이블 감싸고 있는 div태그 */
+#mainContainer {width: 60%; margin-left:auto; margin-right:auto;}
+
+#mainTable {width: 100%; text-align: center;}
+
+#textOrange {font-size: 18px; color: #F95700; font-weight: bold;}
+
+#mainTable th { background-color: orange; color: white; vertical-align:middle;}
+
+body {font-family:  'Arita-dotum-Medium';}

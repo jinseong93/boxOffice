@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+#header {
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 80px;	
+	display: flex;
+	justify-content: center;
+}
+
+.hd {
+	display: flex;
+	margin-right: 80px;
+}
+
+.signin {
+	font-size: 20px;
+	margin-left: 130px;
+	margin-top:  32px;
+	padding-right: 30px;
+}
+
+.si {
+	font-size: 20px;
+	display: none;
+	margin-top: 1px;
+	position: absolute;
+	padding-top: 50px;
+}
+
+.ticket {
+	margin-right: 40px;
+	margin-top:  20px;
+}
+
+/* .logo {
+	 margin-right: 10px;
+} */
+
+.menu {
+	margin-right: 40px;
+	margin-top:  20px;
+	padding: 0 20px 0 10px;
+}
+
+.menu2 {
+	font-size: 25px;
+	display: none;
+	margin-top: 5px;
+	position: absolute;
+	padding-top: 25px;
+
+}
+
+.hd div:hover ul {
+ display: block;
+ 
+}
+
+.signin div:hover ul {
+ display: block;
+ 
+}
+
+.login {margin-right: 25px;}
+
+#header a {
+  color: black;
+  text-decoration : none;
+  font-size: 0.7em;
+}
+
+#header ul{
+	padding: 0;
+	list-style: none;
+	text-align: center
+}
+
+#header li {
+	padding-top: 5px;
+}
+
+#header ul li {
+	float: left;
+	margin-right: 15px;
+}
+
+#header .menu #logoText{color: #F95700; font-size: 1.4em;}
+
+.login {
+	color: #F95700;
+    width: 120px;
+    text-align: center;
+    height: 30px;
+    padding-bottom: 34px;
+}

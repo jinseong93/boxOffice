@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nowShowingns">
+<select id="select" parameterType="string" resultType="nowShowing">
+		select * from nowShowing where nsCode=#{nsCode}
+	</select>
+		
+	<select id="selectNsCode" parameterType="string" resultType="nowShowing">
+		select nsCode from NOWSHOWING where mvCode =#{mvCode} and ttCode =#{ttCode} and screenCode=#{screenCode} and showingDay=#{showingDay, jdbcType=VARCHAR}
+	</select>	
+	
+	<select id="selectDayList" resultType="nowShowing">
+	select * from (select rowNum rn, a.* from(select distinct showingDay from NOWSHOWING where pchk='n' and (mvCode =#{mvCode} and ttCode =#{ttCode}) order by showingDay)a)
+	</select>
+	
+	<select id="selectNsCode2" resultType="int">
+		select nsCode from NOWSHOWING where mvCode =#{mvCode} and ttCode =#{ttCode} and screenCode=#{screenCode} and showingDay=#{showingDay, jdbcType=VARCHAR}
+	</select>
+	
+	<select id="selectList" resultType="nowShowing">
+	select * from (select rowNum rn, a.* from(select n.showingDay, s.screenTime, n.pchk from NOWSHOWING n, SCREEN s where n.screenCode=s.screenCode group by n.showingDay, n.pchk, s.screenTime order by showingDay, screenTime)a) where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="gettotal" parameterType="String" resultType="_int">
+	select count(*) from (select n.showingDay, s.screenTime, n.pchk from NOWSHOWING n, SCREEN s where n.screenCode=s.screenCode group by n.showingDay, n.pchk, s.screenTime order by showingDay)
+	</select>
+	
+	<update id="updatePchk" parameterType="string">	
+	update (select n.showingDay, s.screenTime, n.pchk from NOWSHOWING n, SCREEN s where n.screenCode=s.screenCode) set pchk='y' where showingDay=#{showingDay } and screenTime=#{screenTime }
+	</update>
+	
+	<update id="updatePchk2" parameterType="string">
+	update (select n.showingDay, s.screenTime, n.pchk from NOWSHOWING n, SCREEN s where n.screenCode=s.screenCode) set pchk='n' where showingDay=#{showingDay } and screenTime=#{screenTime }
+	</update>
+	
+	<insert id="insert" parameterType="nowShowing">
+	<selectKey keyProperty="nsCode" order="BEFORE" resultType="integer">
+			select nvl(max(nsCode), 0) + 1 nsCode from NOWSHOWING
+		</selectKey>
+		insert into NOWSHOWING (nsCode,mvCode,ttCode,screenCode,showingDay,pchk)values (#{nsCode},#{mvCode},#{ttCode},#{screenCode},#{showingDay},'n')
+	</insert>
+	<select id="selectNsCode3" resultType="nowShowing">
+	select * from NOWSHOWING where screenCode=#{scCode} and showingDay=#{showingDay}
+	</select>
+</mapper>
+

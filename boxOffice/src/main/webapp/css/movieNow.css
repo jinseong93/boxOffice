@@ -1,0 +1,42 @@
+body {font-family:  'Arita-dotum-Medium';}
+
+/** movie **/
+#title1{ color: black; font-size: 30px; margin-left: 450px; position:absolute; top:175px; }
+	
+/** 현재 상영중 **/
+#title2 { color: black; font-size: 30px; margin-left: 890px; position:absolute; top:200px;}
+
+/** 상영 예정 **/
+a[id="category1"] { color: black; font-size: 20px; margin-left: 1050px; position:absolute; top:280px;}
+/** 현재 상영중 **/
+a[id="category2"] { color: black; font-size: 20px; margin-left: 920px; position:absolute; top:280px;}
+/** 상영 종료 **/
+a[id="category3"] { color: black; font-size: 20px; margin-left: 800px; position:absolute; top:280px;}	
+
+#movieNowBox
+ { background-color: transparent;
+ border-radius: 20px;
+ margin-bottom: 50px;
+ padding: 50px;
+ width: 650px;
+ margin-left: auto;
+ margin-right: auto;}
+ 
+
+
+a.button {
+	background:linear-gradient(to bottom, orange 5%, orange 100%);
+	background-color:orange;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:10px 22px;
+	text-decoration:none;
+	position:relative;
+	top:1px;
+	margin-right: 30px;
+}
+

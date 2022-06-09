@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="storest">
+
+	<select id="select" parameterType="integer" resultType="store">
+		select * from store where pdCode = #{pdCode}
+	</select>
+	<select id="callList" resultType="store" parameterType="String">
+		select * from store
+	</select>
+	
+
+
+</mapper>

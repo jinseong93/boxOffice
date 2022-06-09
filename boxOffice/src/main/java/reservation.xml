@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reservationns">
+
+
+	<insert id="insert" parameterType="reservation">
+	<selectKey keyProperty="rsCode" order="BEFORE" resultType="integer">
+			select nvl(max(rsCode), 0) + 1 rsCode from reservation
+		</selectKey>
+	insert into reservation (rsCode,nsCode, mvCode, seats ,id,ticketCode,finalPrice,rsCheck,shCheck, rvCheck)values(#{rsCode},#{nsCode},#{mvCode},#{seats},#{id},#{ticketCode},#{finalPrice},'n','n','n')
+	</insert>
+	
+	<insert id="insertm" parameterType="reservation">
+	<selectKey keyProperty="rsCode" order="BEFORE" resultType="integer">
+			select nvl(max(rsCode), 0) + 1 rsCode from reservation
+		</selectKey>
+	insert into reservation (rsCode,nsCode, mvCode, seats ,id,ticketCode,finalPrice,rsCheck,shCheck, rvCheck)values(#{rsCode},#{nsCode},#{mvCode},#{seats},#{id},#{ticketCode},#{finalPrice},'n','n','n')
+	</insert>
+	
+	<insert id="insertp" parameterType="reservation">
+	<selectKey keyProperty="rsCode" order="BEFORE" resultType="integer">
+			select nvl(max(rsCode), 0) + 1 rsCode from reservation
+		</selectKey>
+	insert into reservation (rsCode,nsCode, mvCode, seats ,id,ticketCode,finalPrice,rsCheck,shCheck, rvCheck)values(#{rsCode},#{nsCode},#{mvCode},#{seats},#{id},#{ticketCode},#{finalPrice},'y','n','n')
+	</insert>	
+	
+	<select id="selectCode1" resultType="int">
+		select nvl(max(ticketCode),0) + 1 ticketCode from reservation
+	</select>
+	
+	<update id="rsCheckY" parameterType="reservation">
+	update reservation set rsCheck = 'y' where id=#{id }
+	</update>
+	
+	<select id="getTiketTotal" parameterType="string" resultType="_int" >
+		select count(*) from reservation where id=#{id} and shCheck ='n'
+	</select>	
+	<select id="getEndTiketTotal" parameterType="string" resultType="_int" >
+		select count(*) from reservation where id=#{id} and shCheck ='y'
+	</select>
+	<select id="selectTiketList" resultType="reservation">
+		select *  from (select rowNum rn, a.* from(select r.ticketCode,r.finalPrice,r.shCheck,r.rsCheck,r.id,m.mvTitle,r.nsCode from reservation r, movie m where m.mvcode=r.mvcode and (id=#{id} and shCheck ='n') group by r.ticketCode,r.finalPrice,r.shCheck,r.rsCheck,r.id,m.mvTitle,r.nsCode order by ticketCode desc)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="selectEndTiketList" resultType="reservation">
+		select * from (select rowNum rn, a.* from(select r.ticketCode,r.finalPrice,r.shCheck,r.rsCheck,r.id,m.mvTitle,r.nsCode from reservation r, movie m where  m.mvcode=r.mvcode and (id=#{id} and shCheck ='y') group by r.ticketCode,r.finalPrice,r.shCheck,r.rsCheck,r.id,m.mvTitle,r.nsCode order by ticketCode desc)a) where rn between #{startRow} and #{endRow}
+	</select>	
+	<select id="selectCode" parameterType="string" resultType="string" >
+		select rsCode from reservation where ticketCode=#{ticketCode} and ROWNUM <![CDATA[<=]]> 1
+	</select>
+	<select id="selectTicketinfo" parameterType="string" resultType="reservation" >
+		select * from reservation where rsCode=#{rsCode}
+	</select>
+	<select id="selectSeatsList" parameterType="string" resultType="reservation" >
+		select seats from reservation where ticketCode=#{ticketCode}
+	</select>
+	
+	<select id="disableSeatsList" parameterType="string" resultType="reservation" >
+	select *  from (select a.* from(select n.nsCode, r.seats from NOWSHOWING n, Reservation r where n.nsCode=r.nsCode group by n.nsCode, r.seats order by nsCode)a) where nscode=#{nsCode}
+	</select>
+	
+	<select id="gettotal" parameterType="String" resultType="_int">
+		select count(*) from reservation
+	</select>
+	
+	<select id="selectList" resultType="reservation">
+		select * from (select rowNum rn, a.* from(select * from reservation order by rsCode desc )a) where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<update id="updateRsCheck" parameterType="string">
+		update reservation set rsCheck='y' where ticketCode=#{ticketCode }
+	</update>
+	
+	<update id="updateShCheck" parameterType="string">
+		update reservation set shCheck='y' where ticketCode=#{ticketCode }
+	</update>
+	
+	<update id="updateRvCheck" parameterType="integer">
+		update reservation set rvcheck = 'y' where rsCode = #{rsCode }
+	</update>
+	
+	<select id="gettotalsearch" parameterType="string" resultType="_int">	
+		select count(*) from (select r.id, m.mvTitle, r.ticketCode, r.rsCheck, r.shCheck from reservation r, movie m where r.mvCode=m.mvCode and ${whereM} like '%' ||  #{search} || '%' group by r.id, m.mvTitle, r.ticketCode, r.rsCheck, r.shCheck order by id)
+	</select>
+	
+	<select id="selectSearchList" parameterType="string" resultType="reservation">
+		select * from (select rowNum rn, a.* from(select r.id, m.mvTitle, r.ticketCode, r.rsCheck, r.shCheck from reservation r, movie m where r.mvCode=m.mvCode and lower(${whereM}) like '%' ||  lower(#{search}) || '%' group by r.id, m.mvTitle, r.ticketCode, r.rsCheck, r.shCheck order by ticketCode)a) where rn between #{startRow} and #{endRow}
+	</select>
+	<update id="updateShcheck2" parameterType="integer">
+		update reservation set shCheck='y' where nsCode=#{nscode }
+	</update>
+	<update id="updateShcheck4" parameterType="string">
+		update reservation set shCheck='n' where nscode IN (select nscode from nowshowing  where screencode IN (select screencode from screen  where screentime = #{screenTime} ) and showingDay=#{showingDay})
+	</update>
+</mapper>
