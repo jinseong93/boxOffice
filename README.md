@@ -8,12 +8,7 @@
 
 ***
 ### <메인페이지>
-![box2](https://user-images.githubusercontent.com/102139584/172799351-283bc9d8-5578-4226-b911-4bfd6654bf1a.jpg)  
-#### 저희 사이트 메인페이지 이며 주요 화면으로  
-### -유튜브에서 예교편을 가져와 재생 
-### -등록된 영화의 평점순으로 top5 리스트
-### -진행중인 이벤트 소개  
-#### 이렇게 3가지가 있습니다.
+![image](https://user-images.githubusercontent.com/102139584/173027608-21f717c7-cfc1-4f04-9f1e-e1d1c0fa806e.png)
 
 
 
