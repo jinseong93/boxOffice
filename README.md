@@ -15,10 +15,12 @@
 ![image](https://user-images.githubusercontent.com/102139584/173034086-5a9aae0d-8e65-4f01-a8e9-2a246dd146db.png)
 ##  
 ## <마이페이지 & 회원탈퇴>  
-![image](https://user-images.githubusercontent.com/102139584/173175104-2febc16b-af6a-40dc-ae24-332ea8212cee.png)
+![image](https://user-images.githubusercontent.com/102139584/173191430-96cb97a3-83a3-4b1c-8ab1-4d1bc771c95e.png)
 ##  
 ## <회원의 작성 글 & 예매 내역>
 ![image](https://user-images.githubusercontent.com/102139584/173176632-137471cf-b226-4f6c-b19d-3709522ae442.png)
 ##  
 ## <관리자용 회원 리스트>  
 ![image](https://user-images.githubusercontent.com/102139584/173191018-8c88af7b-b776-4d8a-8db1-c1fdc285f678.png)  
+##
+## <영화 & 이벤트 등록>
