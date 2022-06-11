@@ -3,7 +3,8 @@
 ## 4인으로 진행되었고 제가 담당한 파트는  
 ### -_메인페이지_  
 ### -_회원&관리자_  
-### -_영화등록_  
+### -_영화 등록_
+### -_이벤트 등록_
 ## 관련 기능 구현 입니다.  
 
 ***
@@ -12,6 +13,8 @@
 ##  
 ## <로그인 & 회원가입>
 ![image](https://user-images.githubusercontent.com/102139584/173034086-5a9aae0d-8e65-4f01-a8e9-2a246dd146db.png)
-
+## <마이페이지 & 회원탈퇴>  
+![image](https://user-images.githubusercontent.com/102139584/173175104-2febc16b-af6a-40dc-ae24-332ea8212cee.png)
+## 
 
 
