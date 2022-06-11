@@ -13,8 +13,10 @@
 ##  
 ## <로그인 & 회원가입>
 ![image](https://user-images.githubusercontent.com/102139584/173034086-5a9aae0d-8e65-4f01-a8e9-2a246dd146db.png)
+##  
 ## <마이페이지 & 회원탈퇴>  
 ![image](https://user-images.githubusercontent.com/102139584/173175104-2febc16b-af6a-40dc-ae24-332ea8212cee.png)
-## 
-
+##  
+## <회원의 작성 글 & 예매 내역>
+![image](https://user-images.githubusercontent.com/102139584/173176632-137471cf-b226-4f6c-b19d-3709522ae442.png)
 
