@@ -17,7 +17,7 @@
 ![image](https://user-images.githubusercontent.com/102139584/173027608-21f717c7-cfc1-4f04-9f1e-e1d1c0fa806e.png)  
 ###  
 ## <로그인 & 회원가입>
-![image](https://user-images.githubusercontent.com/102139584/173034086-5a9aae0d-8e65-4f01-a8e9-2a246dd146db.png)
+![image](https://user-images.githubusercontent.com/102139584/173192294-961aac85-7604-4fb5-b4f8-c6c2bfa90e7f.png)
 ###  
 ## <마이페이지 & 회원탈퇴>  
 ![image](https://user-images.githubusercontent.com/102139584/173191430-96cb97a3-83a3-4b1c-8ab1-4d1bc771c95e.png)
