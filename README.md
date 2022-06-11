@@ -20,4 +20,5 @@
 ## <회원의 작성 글 & 예매 내역>
 ![image](https://user-images.githubusercontent.com/102139584/173176632-137471cf-b226-4f6c-b19d-3709522ae442.png)
 ##  
-## <관리자용 회원 리스트>
+## <관리자용 회원 리스트>  
+![image](https://user-images.githubusercontent.com/102139584/173191018-8c88af7b-b776-4d8a-8db1-c1fdc285f678.png)  
